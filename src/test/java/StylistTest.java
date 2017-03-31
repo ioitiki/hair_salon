@@ -94,5 +94,21 @@ public class StylistTest {
     assertEquals("Second best now!", testStylist.getDescription());
   }
 
+  @Test
+  public void deleteStylist_deletesStylistFromDB_true() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist.save();
+    Client testClient1 = new Client("Joe Bob Johnson", testStylist.getId(), "Old timer with little hair", 76, "Male");
+    testClient1.save();
+    Client testClient2 = new Client("Dallas Win", testStylist.getId(), "Total hipster", 27, "Male");
+    testClient2.save();
+    int testStylistId = testStylist.getId();
+    int testClient1Id = testClient1.getId();
+    int testClient2Id = testClient2.getId();
+    testStylist.deleteStylist();
+    assertEquals(null, Stylist.find(testStylistId));
+    assertEquals(null, Client.find(testClient1Id));
+    assertEquals(null, Client.find(testClient2Id));
+  }
 
 }
