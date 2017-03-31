@@ -17,8 +17,10 @@ public class Client {
     this.clientDescription = clientDescription;
     this.clientAge = clientAge;
     this.clientGender = clientGender;
-
-
   }
+
+  // public String getName() {
+  //   return "";
+  // }
 
 }
