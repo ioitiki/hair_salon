@@ -1,6 +1,7 @@
 import org.sql2o.*;
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.Arrays;
 
 public class StylistTest {
 
@@ -68,6 +69,18 @@ public class StylistTest {
     Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
     testStylist.save();
     assertEquals(testStylist, Stylist.find(testStylist.getId()));
+  }
+
+  @Test
+  public void getClients_returnsAllClientsWithSameStylistId_List() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist.save();
+    Client testClient1 = new Client("Joe Bob Johnson", testStylist.getId(), "Old timer with little hair", 76, "Male");
+    testClient1.save();
+    Client testClient2 = new Client("Dallas Win", testStylist.getId(), "Total hipster", 27, "Male");
+    testClient2.save();
+    Client[] clients = new Client[] {testClient1, testClient2};
+    assertTrue(testStylist.getClients().containsAll(Arrays.asList(clients)));
   }
 
 
