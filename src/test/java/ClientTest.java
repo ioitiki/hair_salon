@@ -88,6 +88,15 @@ public class ClientTest {
     assertEquals(testClient, Client.find(testClient.getId()));
   }
 
+  @Test
+  public void getStylistName_returnsCorrectStylistName_BenSmith() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist.save();
+    Client testClient = new Client("Joe Bob Johnson", testStylist.getId(), "Old timer with little hair", 76, "Male");
+    testClient.save();
+    assertEquals(testStylist.getName(), testClient.getStylistName());
+  }
+
 
 
 }

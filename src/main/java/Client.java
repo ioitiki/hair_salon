@@ -90,4 +90,8 @@ public class Client {
     }
   }
 
+  public String getStylistName() {
+    return Stylist.find(this.stylistId).getName();
+  }
+
 }
