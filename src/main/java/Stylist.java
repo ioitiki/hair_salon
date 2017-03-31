@@ -12,7 +12,7 @@ public class Stylist {
   }
 
   public String getName() {
-    return "";
+    return stylistName;
   }
 
 }
