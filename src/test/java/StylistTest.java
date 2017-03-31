@@ -49,5 +49,19 @@ public class StylistTest {
     assertTrue(testStylist1.equals(testStylist2));
   }
 
+  @Test
+  public void save_assignsIdToStylist_true() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist.save();
+    assertEquals(testStylist.getId(), Stylist.all().get(0).getId());
+  }
+
+  @Test
+  public void getId_returnsAnId_true() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist.save();
+    assertTrue(testStylist.getId() > 0);
+  }
+
 
 }
