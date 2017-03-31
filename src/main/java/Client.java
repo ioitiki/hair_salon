@@ -28,7 +28,7 @@ public class Client {
   }
 
   public int getStylistId() {
-    return 10;
+    return stylistId;
   }
 
   // public String getName() {
