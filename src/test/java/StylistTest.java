@@ -63,5 +63,12 @@ public class StylistTest {
     assertTrue(testStylist.getId() > 0);
   }
 
+  @Test
+  public void find_returnsStylistWithSameId_Stylist() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist.save();
+    assertEquals(testStylist, Stylist.find(testStylist.getId()));
+  }
+
 
 }
