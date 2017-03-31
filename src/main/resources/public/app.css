@@ -30,7 +30,7 @@ body {
 
 #team-img {
   margin-top: 10px;
-  border: 4px solid grey;
+  border: 3px solid black;
 }
 
 h1 {
@@ -64,4 +64,9 @@ h2 {
 
 .well-title {
   margin-top: 15px;
+}
+
+#about-img {
+  height: 100%;
+  width: 100%;
 }
