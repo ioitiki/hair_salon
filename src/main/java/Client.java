@@ -19,8 +19,8 @@ public class Client {
     this.clientGender = clientGender;
   }
 
-  // public String getName() {
-  //   return "";
-  // }
+  public String getName() {
+    return "";
+  }
 
 }
