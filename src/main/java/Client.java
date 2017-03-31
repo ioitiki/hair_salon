@@ -35,10 +35,10 @@ public class Client {
     return clientDescription;
   }
 
-  // public String getName() {
-  //   return clientName;
-  // }
-  //
+  public int getAge() {
+    return 1;
+  }
+  
   // public String getName() {
   //   return clientName;
   // }

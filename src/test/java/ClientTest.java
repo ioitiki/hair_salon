@@ -31,4 +31,10 @@ public class ClientTest {
     assertEquals("Old timer with little hair", testClient.getDescription());
   }
 
+  @Test
+  public void getAge_returnsCorrectAgeOfClient_76() {
+    Client testClient = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    assertEquals(76, testClient.getAge());
+  }
+
 }
