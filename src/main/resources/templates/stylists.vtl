@@ -1,19 +1,21 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <h1>Stylists</h1>
-    <div class="well">
+    <hr>
+    <div class="input-well well">
+      <h2 class="well-title">All Stylists</h2>
       <table class="table table-bordered table-hover">
         <tr>
           <th>Stylist Name</th>
           <th>Description</th>
         </tr>
         #if($stylists.size() > 0)
-          #foreach($stylist in $stylists)
-            <tr>
-              <td><a href="/stylists/$stylist.getId()">$stylist.getName()</a></td>
-              <td>$stylist.getDescription()</td>
-            </tr>
-          #end
+        #foreach($stylist in $stylists)
+        <tr>
+          <td><a href="/stylists/$stylist.getId()">$stylist.getName()</a></td>
+          <td>$stylist.getDescription()</td>
+        </tr>
+        #end
         #else
         <tr>
           <td>No stylists added.</td>
@@ -21,8 +23,15 @@
         </tr>
         #end
       </table>
-      <form action="/stylists/new" method="post">
-        <button type="submit" class="btn search-btn btn-info">Add Stylist</button>
+    </div>
+    <div class="input-well well">
+      <h2 class="well-title">Add Stylist</h2>
+      <form action="/stylists" method="post">
+        <label for="name">Enter Stylist Name:</label>
+        <input class="form-control" type="text" name="name" id="name" required>
+        <label for="description">Stylist Specialties:</label>
+        <textarea class="form-control" name="description" rows="8" cols="40" required></textarea>
+        <button type="submit" class="form-btn btn btn-primary">Add Stylist</button>
       </form>
     </div>
   </div>
