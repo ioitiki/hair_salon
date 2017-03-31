@@ -8,10 +8,25 @@
     <script src="/js/scripts.js"></script>
   </head>
   <body>
-    <!-- begin inner template-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="/"><img src="/images/icon.png" id="home-icon" /></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/stylists">All Stylists</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <form action="/search" class="navbar-form navbar-right" method="post">
+          <div class="form-group">
+            <input required name="searchInput" type="text" class="form-control" placeholder="Stylists Name">
+          </div>
+          <button type="submit" class="search-btn btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+    </nav>
     <div class="container">
       #parse( $template )
     </div>
-    <!-- end inner template-->
   </body>
 </html>

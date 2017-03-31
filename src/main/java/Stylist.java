@@ -6,7 +6,6 @@ public class Stylist {
   private int id;
   private String stylistDescription;
 
-
   public Stylist(String stylistName, String stylistDescription) {
     this.stylistName = stylistName;
     this.stylistDescription = stylistDescription;

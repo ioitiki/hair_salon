@@ -9,9 +9,6 @@ public class Client {
   private int clientAge;
   private String clientGender;
 
-
-
-
   public Client(String clientName, int stylistId, String clientDescription, int clientAge, String clientGender) {
     this.clientName = clientName;
     this.stylistId = stylistId;
