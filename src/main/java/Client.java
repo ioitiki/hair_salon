@@ -19,8 +19,28 @@ public class Client {
     this.clientGender = clientGender;
   }
 
+  public int getId() {
+    return id;
+  }
+
   public String getName() {
     return clientName;
   }
+
+  public int getStylistId() {
+    return 10;
+  }
+
+  // public String getName() {
+  //   return clientName;
+  // }
+  //
+  // public String getName() {
+  //   return clientName;
+  // }
+  //
+  // public String getName() {
+  //   return clientName;
+  // }
 
 }

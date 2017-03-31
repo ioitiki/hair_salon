@@ -19,4 +19,10 @@ public class ClientTest {
     assertEquals("Joe Bob Johnson", testClient.getName());
   }
 
+  @Test
+  public void getStylistId_returnsCorrectStylistIdOfClient_1() {
+    Client testClient = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    assertEquals(1, testClient.getStylistId());
+  }
+
 }
