@@ -10,6 +10,7 @@
           <th>About Client</th>
           <th>Age</th>
           <th>Gender</th>
+          <th>Eidt/Delete</th>
         </tr>
         #if($clients.size() > 0)
           #foreach($client in $clients)
@@ -18,6 +19,12 @@
             <td>$client.getDescription()</td>
             <td>$client.getAge()</td>
             <td>$client.getGender()</td>
+            <td>
+              <a href="/stylists/$stylist.getId()/clients/$client.getId()/edit" class="edit-btn btn btn-primary btn-xs">Edit</a>
+              <form action="/stylists/$stylist.getId()/clients/$client.getId()/delete" method="post">
+                <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+              </form>
+            </td>
           </tr>
           #end
         #else

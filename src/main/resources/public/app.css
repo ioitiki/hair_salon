@@ -70,3 +70,7 @@ h2 {
   height: 100%;
   width: 100%;
 }
+
+.edit-btn {
+  margin-bottom: 2px;
+}
