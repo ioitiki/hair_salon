@@ -32,7 +32,7 @@ public class Client {
   }
 
   public String getDescription() {
-    return "";
+    return clientDescription;
   }
 
   // public String getName() {
