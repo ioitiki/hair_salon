@@ -31,10 +31,10 @@ public class Client {
     return stylistId;
   }
 
-  // public String getName() {
-  //   return clientName;
-  // }
-  //
+  public String getDescription() {
+    return "";
+  }
+
   // public String getName() {
   //   return clientName;
   // }
