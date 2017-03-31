@@ -36,9 +36,9 @@ public class Client {
   }
 
   public int getAge() {
-    return 1;
+    return clientAge;
   }
-  
+
   // public String getName() {
   //   return clientName;
   // }
