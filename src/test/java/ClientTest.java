@@ -97,6 +97,21 @@ public class ClientTest {
     assertEquals(testStylist.getName(), testClient.getStylistName());
   }
 
+  @Test
+  public void updateClient_updatesClientProperties_true() {
+    Client testClient = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    testClient.save();
+    testClient.updateClient("Joe Johnson", "Now older with less hair", 78, "Male");
+    assertEquals("Joe Johnson", Client.find(testClient.getId()).getName());
+    assertEquals("Now older with less hair", Client.find(testClient.getId()).getDescription());
+    assertEquals(78, Client.find(testClient.getId()).getAge());
+    assertEquals("Male", Client.find(testClient.getId()).getGender());
+    assertEquals("Joe Johnson", testClient.getName());
+    assertEquals("Now older with less hair", testClient.getDescription());
+    assertEquals(78, testClient.getAge());
+    assertEquals("Male", testClient.getGender());
+  }
+
 
 
 }

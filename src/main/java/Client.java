@@ -94,4 +94,31 @@ public class Client {
     return Stylist.find(this.stylistId).getName();
   }
 
+  public void updateClient(String clientName, String clientDescription, int clientAge, String clientGender) {
+    this.clientName = clientName;
+    this.stylistId = stylistId;
+    this.clientDescription = clientDescription;
+    this.clientAge = clientAge;
+    this.clientGender = clientGender;
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE clients SET (clientName, clientDescription, clientAge, clientGender) = (:clientName, :clientDescription, :clientAge, :clientGender) WHERE id = :id;";
+      con.createQuery(sql)
+        .addParameter("clientName", this.clientName)
+        .addParameter("clientDescription", this.clientDescription)
+        .addParameter("clientAge", this.clientAge)
+        .addParameter("clientGender", this.clientGender)
+        .addParameter("id", this.id)
+        .executeUpdate();
+    }
+  }
+
+  // public void deleteClient() {
+  //   try (Connection con = DB.sql2o.open()) {
+  //     String sql = "DELETE FROM clients WHERE id = :id;";
+  //     con.createQuery(sql)
+  //       .addParameter("id", this.id)
+  //       .executeUpdate();
+  //   }
+  // }
+
 }
