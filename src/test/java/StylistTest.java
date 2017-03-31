@@ -83,5 +83,16 @@ public class StylistTest {
     assertTrue(testStylist.getClients().containsAll(Arrays.asList(clients)));
   }
 
+  @Test
+  public void updateStylist_updatesStylistProperties_true() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist.save();
+    testStylist.updateStylist("Ben H. Smith", "Second best now!");
+    assertEquals("Ben H. Smith", Stylist.find(testStylist.getId()).getName());
+    assertEquals("Second best now!", Stylist.find(testStylist.getId()).getDescription());
+    assertEquals("Ben H. Smith", testStylist.getName());
+    assertEquals("Second best now!", testStylist.getDescription());
+  }
+
 
 }

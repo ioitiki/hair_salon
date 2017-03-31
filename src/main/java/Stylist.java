@@ -73,6 +73,19 @@ public class Stylist {
     }
   }
 
+  public void updateStylist(String stylistName, String stylistDescription) {
+    this.stylistName = stylistName;
+    this.stylistDescription = stylistDescription;
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE stylists SET (stylistName, stylistDescription) = (:stylistName, :stylistDescription) WHERE id = :id;";
+      con.createQuery(sql)
+        .addParameter("stylistName", stylistName)
+        .addParameter("stylistDescription", stylistDescription)
+        .addParameter("id", this.id)
+        .executeUpdate();
+    }
+  }
+
 
 
 
