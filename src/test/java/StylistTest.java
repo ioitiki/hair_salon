@@ -17,7 +17,12 @@ public class StylistTest {
   public void getName_returnsNameOfStylist_BenSmith() {
     Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
     assertEquals("Ben Smith", testStylist.getName());
+  }
 
+  @Test
+  public void getDescription_returnsDescriptionOfStylist_BenSmith() {
+    Stylist testStylist = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    assertEquals("Best hair stylist in town. Great with colors!", testStylist.getDescription());
   }
 
 

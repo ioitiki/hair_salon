@@ -15,4 +15,12 @@ public class Stylist {
     return stylistName;
   }
 
+  public String getDescription() {
+    return "";
+  }
+
+
+
+
+
 }
