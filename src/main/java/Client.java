@@ -39,8 +39,8 @@ public class Client {
     return clientAge;
   }
 
-  // public String getName() {
-  //   return clientName;
-  // }
+  public String getGender() {
+    return "";
+  }
 
 }
