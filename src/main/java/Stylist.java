@@ -11,4 +11,8 @@ public class Stylist {
     this.stylistDescription = stylistDescription;
   }
 
+  public String getName() {
+    return "";
+  }
+
 }
