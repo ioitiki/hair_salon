@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>$stylist.getName()</h1>
+    <a href="/stylists/$stylist.getId()/clients/new" class="btn btn-primary">Add Client</a>
+    <hr>
+    <div class="input-well well">
+      <h2 class="well-title">All Clients</h2>
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>Client Name</th>
+          <th>About Client</th>
+          <th>Age</th>
+          <th>Gender</th>
+        </tr>
+        #if($clients.size() > 0)
+          #foreach($client in $clients)
+          <tr>
+            <td><a href="/stylists/$stylist.getId()/clients/$client.getId()">$client.getName()</a></td>
+            <td>$client.getDescription()</td>
+            <td>$client.getAge()</td>
+            <td>$client.getGender()</td>
+          </tr>
+          #end
+        #else
+        <tr>
+          <td>No clients added.</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        </tr>
+        #end
+      </table>
+    </div>
+  </div>
+</div>
