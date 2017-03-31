@@ -40,7 +40,7 @@ public class Client {
   }
 
   public String getGender() {
-    return "";
+    return clientGender;
   }
 
 }
