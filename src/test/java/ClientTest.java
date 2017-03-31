@@ -67,6 +67,20 @@ public class ClientTest {
     assertTrue(testClient1.equals(testClient2));
   }
 
+  @Test
+  public void save_assignsIdToClient_true() {
+    Client testClient = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    testClient.save();
+    assertEquals(testClient.getId(), Client.all().get(0).getId());
+  }
+
+  @Test
+  public void getId_returnsAnId_true() {
+    Client testClient = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    testClient.save();
+    assertTrue(testClient.getId() > 0);
+  }
+
 
 
 }
