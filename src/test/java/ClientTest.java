@@ -112,6 +112,13 @@ public class ClientTest {
     assertEquals("Male", testClient.getGender());
   }
 
-
+  @Test
+  public void deleteClient_deletesClientFromDB_null() {
+    Client testClient = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    testClient.save();
+    int testClientId = testClient.getId();
+    testClient.deleteClient();
+    assertEquals(null, Client.find(testClientId));
+  }
 
 }
