@@ -43,4 +43,30 @@ public class ClientTest {
     assertEquals("Male", testClient.getGender());
   }
 
+  @Test
+  public void save_savesClientIntoDatabase_true() {
+    Client testClient = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    testClient.save();
+    assertTrue(Client.all().get(0).equals(testClient));
+  }
+
+  @Test
+  public void all_returnsAllClientsInDB_true() {
+    Client testClient1 = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    testClient1.save();
+    Client testClient2 = new Client("Dallas Win", 2, "Total hipster", 27, "Male");
+    testClient2.save();
+    assertTrue(Client.all().get(0).equals(testClient1));
+    assertTrue(Client.all().get(1).equals(testClient2));
+  }
+
+  @Test
+  public void equals_ifClientNameStylistIdDescriptionAgeAndGenderAreTheSame_true() {
+    Client testClient1 = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    Client testClient2 = new Client("Joe Bob Johnson", 1, "Old timer with little hair", 76, "Male");
+    assertTrue(testClient1.equals(testClient2));
+  }
+
+
+
 }
