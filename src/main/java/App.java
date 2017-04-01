@@ -22,6 +22,13 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/clients", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("clients", Client.all());
+      model.put("template", "templates/clients.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     post("/stylists", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String name = request.queryParams("name");
@@ -149,6 +156,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       String searchInput = request.params(":search");
       model.put("stylists", Stylist.searchStylists(searchInput));
+      model.put("clients", Client.searchClients(searchInput));
       model.put("template", "templates/results.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

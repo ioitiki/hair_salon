@@ -24,9 +24,9 @@ body {
   margin-left: 0px;
 }
 
-#banner-logo {
-  width: 200px;
-  height: 200px;
+.banner-logo {
+  width: 150px;
+  height: 150px;
 }
 
 #team-img {
@@ -80,8 +80,16 @@ h2 {
 #about-img {
   height: 100%;
   width: 100%;
+  border: 2px solid black;
 }
 
-.edit-btn {
-  margin-bottom: 2px;
+.inlinebox {
+  display: inline-block;
+  *display: inline;
+  line-height: 1;
+  vertical-align: top;
+}
+
+#clients-well {
+  padding-top: 36px;
 }

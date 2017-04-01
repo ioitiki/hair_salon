@@ -1,47 +1,8 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h1>Search Results</h1>
+    <h1>Clients</h1>
     <hr>
-    <div class="input-well well">
-      <h2 class="well-title">Matching Stylists</h2>
-      <table class="table table-bordered table-hover">
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Edit/Delete</th>
-        </tr>
-        #if($stylists.size() > 0)
-          #foreach($stylist in $stylists)
-          <tr>
-            <td><a href="/stylists/$stylist.getId()">$stylist.getName()</a></td>
-            <td>$stylist.getDescription()</td>
-            <td>
-              <div class="inlinebox">
-                <a href="/stylists/$stylist.getId()/edit" class="edit-btn btn btn-primary btn-xs">Edit</a>
-              </div>
-              <div class="inlinebox">
-                <form action="/stylists/$stylist.getId()/delete" method="post">
-                  <button type="submit" class="delete-btn btn btn-danger btn-xs">Delete</button>
-                </form>
-              </div>
-            </td>
-          </tr>
-          #end
-        #else
-        <tr>
-          <td>No stylists found.</td>
-          <td>N/A</td>
-          <td>N/A</td>
-        </tr>
-        #end
-      </table>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="input-well well">
-      <h2 class="well-title">Matching Clients</h2>
+    <div class="well" id="clients-well">
       <table class="table table-bordered table-hover">
         <tr>
           <th>Client Name</th>

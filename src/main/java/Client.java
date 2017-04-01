@@ -119,4 +119,14 @@ public class Client {
     }
   }
 
+  public static List<Client> searchClients(String input) {
+    String newInput = "%" + input + "%";
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM clients WHERE lower(clientName) LIKE lower(:input);";
+      return con.createQuery(sql)
+        .addParameter("input", newInput)
+        .executeAndFetch(Client.class);
+    }
+  }
+
 }
