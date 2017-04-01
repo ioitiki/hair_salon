@@ -98,15 +98,15 @@ public class Stylist {
     }
   }
 
-  // public static List<Stylist> searchStylist(String input) {
-  //   String newInput = "%" + input + "%";
-  //   try (Connection con = DB.sql2o.open()) {
-  //     String sql = "SELECT * FROM stylists WHERE lower(stylistName) LIKE lower(:input);";
-  //     return con.createQuery(sql)
-  //       .addParameter("input", newInput)
-  //       .executeAndFetch(Stylist.class);
-  //   }
-  // }
+  public static List<Stylist> searchStylists(String input) {
+    String newInput = "%" + input + "%";
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM stylists WHERE lower(stylistName) LIKE lower(:input);";
+      return con.createQuery(sql)
+        .addParameter("input", newInput)
+        .executeAndFetch(Stylist.class);
+    }
+  }
 
 
 
