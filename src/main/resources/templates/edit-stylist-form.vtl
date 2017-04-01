@@ -1,12 +1,16 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <h2>Edit Stylist Information</h2>
-    <form action="/stylists/$stylist.getId()/edit" method="post">
-      <label for="name">Edit Stylist Name:</label>
-      <input class="form-control" type="text" name="name" id="name" required value="$stylist.getName()">
-      <label for="description">Edit Stylist Specialties:</label>
-      <textarea class="form-control" name="description" rows="8" cols="40" required>$stylist.getDescription()</textarea>
-      <button type="submit" class="form-btn btn btn-primary">Update Stylist</button>
-    </form>
+    <div class="well">
+      <form action="/stylists/$stylist.getId()/edit" method="post">
+        <label for="name">Edit Stylist Name:</label>
+        <input class="form-control" type="text" name="name" id="name" required value="$stylist.getName()">
+        <div class="form-group">
+          <label for="description">Edit Stylist Specialties:</label>
+          <textarea class="form-control" name="description" rows="8" cols="40" required>$stylist.getDescription()</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Stylist</button>
+      </form>
+    </div>
   </div>
 </div>

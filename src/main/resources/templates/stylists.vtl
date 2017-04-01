@@ -37,9 +37,11 @@
       <form action="/stylists" method="post">
         <label for="name">Enter Stylist Name:</label>
         <input class="form-control" type="text" name="name" id="name" required>
-        <label for="description">Stylist Specialties:</label>
-        <textarea class="form-control" name="description" rows="8" cols="40" required></textarea>
-        <button type="submit" class="form-btn btn btn-primary">Add Stylist</button>
+        <div class="form-group">
+          <label for="description">Edit Stylist Specialties:</label>
+          <textarea class="form-control" name="description" rows="8" cols="40" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Stylist</button>
       </form>
     </div>
   </div>

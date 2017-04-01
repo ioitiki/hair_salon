@@ -145,5 +145,21 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/search/:search", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String searchInput = request.params(":search");
+      model.put("stylists", Stylist.searchStylists(searchInput));
+      model.put("template", "templates/results.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/search", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      String searchInput = request.queryParams("searchInput");
+      String url = String.format("/search/%s", searchInput);
+      response.redirect(url);
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 }
