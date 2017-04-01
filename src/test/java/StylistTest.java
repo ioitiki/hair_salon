@@ -111,4 +111,20 @@ public class StylistTest {
     assertEquals(null, Client.find(testClient2Id));
   }
 
+  @Test
+  public void searchStylist_returnsAllStylistsWithMatchingString_List() {
+    Stylist testStylist1 = new Stylist("Ben Smith", "Best hair stylist in town. Great with colors!");
+    testStylist1.save();
+    Stylist testStylist2 = new Stylist("Jo Brown", "Great with guys hair cuts.");
+    testStylist2.save();
+    Stylist testStylist3 = new Stylist("Ben Long", "just starting out.");
+    testStylist3.save();
+    Stylist testStylist4 = new Stylist("Joanna Place", "Top notch. Always in a good mood.");
+    testStylist4.save();
+    Stylist[] stylists = new Stylist[] {testStylist1, testStylist3};
+    assertTrue(Stylist.searchStylist("ben").containsAll(Arrays.asList(stylists)));
+    assertFalse(Stylist.searchStylist("ben").contains(testStylist2));
+    assertFalse(Stylist.searchStylist("ben").contains(testStylist4));
+  }
+
 }

@@ -8,17 +8,25 @@
         <tr>
           <th>Stylist Name</th>
           <th>Description</th>
+          <th>Edit/Delete</th>
         </tr>
         #if($stylists.size() > 0)
-        #foreach($stylist in $stylists)
-        <tr>
-          <td><a href="/stylists/$stylist.getId()">$stylist.getName()</a></td>
-          <td>$stylist.getDescription()</td>
-        </tr>
-        #end
+          #foreach($stylist in $stylists)
+          <tr>
+            <td><a href="/stylists/$stylist.getId()">$stylist.getName()</a></td>
+            <td>$stylist.getDescription()</td>
+            <td>
+              <a href="/stylists/$stylist.getId()/edit" class="edit-btn btn btn-primary btn-xs">Edit</a>
+              <form action="/stylists/$stylist.getId()/delete" method="post">
+                <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+              </form>
+            </td>
+          </tr>
+          #end
         #else
         <tr>
           <td>No stylists added.</td>
+          <td>N/A</td>
           <td>N/A</td>
         </tr>
         #end

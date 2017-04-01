@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Edit Client Information</h2>
+    <div class="well">
+      <form action="/stylists/$currentStylist.getId()/clients/$client.getId()/edit" method="post">
+        <div class="form-group">
+          <label for="name">Edit Name:</label>
+          <input class="form-control" type="text" name="name" id="name" required value="$client.getName()">
+        </div>
+        <div class="form-group">
+          <label for="stylistId">Change Stylist:</label>
+          <select class="form-control" name="stylistId" selected="$currentStylist.getStylistId()">
+            #foreach($people in $stylists)
+              #if($client.getStylistId() == $people.getId())
+                <option value="$people.getId()" selected>$people.getName()</option>
+              #else
+              <option value="$people.getId()">$people.getName()</option>
+              #end
+            #end
+          </select>
+        </div>
+        <div class="form-inline">
+          <div class="form-group">
+            <label for="age">Edit Age:</label>
+            <input class="form-control" type="text" name="age" required value="$client.getAge()">
+          </div>
+          <div class="form-group">
+            <label for="gender">Edit Gender:</label>
+            <input class="form-control" type="text" name="gender" required value="$client.getGender()">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Change Description:</label>
+          <textarea class="form-control" name="description" rows="8" cols="40" required>$client.getDescription()</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Client</button>
+      </form>
+    </div>
+  </div>
+</div>

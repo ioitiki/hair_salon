@@ -29,6 +29,10 @@ public class Client {
     return stylistId;
   }
 
+  public String getStylistName() {
+    return Stylist.find(this.stylistId).getName();
+  }
+
   public String getDescription() {
     return clientDescription;
   }
@@ -87,20 +91,17 @@ public class Client {
     }
   }
 
-  public String getStylistName() {
-    return Stylist.find(this.stylistId).getName();
-  }
-
-  public void updateClient(String clientName, String clientDescription, int clientAge, String clientGender) {
+  public void updateClient(String clientName, int stylistId, String clientDescription, int clientAge, String clientGender) {
     this.clientName = clientName;
     this.stylistId = stylistId;
     this.clientDescription = clientDescription;
     this.clientAge = clientAge;
     this.clientGender = clientGender;
     try (Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE clients SET (clientName, clientDescription, clientAge, clientGender) = (:clientName, :clientDescription, :clientAge, :clientGender) WHERE id = :id;";
+      String sql = "UPDATE clients SET (clientName, stylistId, clientDescription, clientAge, clientGender) = (:clientName, :stylistId, :clientDescription, :clientAge, :clientGender) WHERE id = :id;";
       con.createQuery(sql)
         .addParameter("clientName", this.clientName)
+        .addParameter("stylistId", this.stylistId)
         .addParameter("clientDescription", this.clientDescription)
         .addParameter("clientAge", this.clientAge)
         .addParameter("clientGender", this.clientGender)
