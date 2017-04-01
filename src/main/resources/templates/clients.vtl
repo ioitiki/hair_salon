@@ -2,7 +2,8 @@
   <div class="col-md-10 col-md-offset-1">
     <h1>Clients</h1>
     <hr>
-    <div class="well" id="clients-well">
+    <div class="well input-well" id="clients-well">
+      <h2 class="well-title">All Clients</h2>
       <table class="table table-bordered table-hover">
         <tr>
           <th>Client Name</th>
@@ -14,33 +15,33 @@
         </tr>
         #if($clients.size() > 0)
           #foreach($client in $clients)
-          <tr>
-            <td><a href="/stylists/$client.getStylistId()/clients/$client.getId()">$client.getName()</a></td>
-            <td>$client.getDescription()</td>
-            <td>$client.getAge()</td>
-            <td>$client.getGender()</td>
-            <td>$client.getStylistName()</td>
-            <td>
-              <div class="inlinebox">
-                <a href="/stylists/$client.getStylistId()/clients/$client.getId()/edit" class="edit-btn btn btn-primary btn-xs">Edit</a>
-              </div>
-              <div class="inlinebox">
-                <form action="/stylists/$client.getStylistId()/clients/$client.getId()/delete" method="post">
-                  <button type="submit" class="delete-btn btn btn-danger btn-xs">Delete</button>
-                </form>
-              </div>
-            </td>
-          </tr>
+            <tr>
+              <td><a href="/stylists/$client.getStylistId()/clients/$client.getId()">$client.getName()</a></td>
+              <td>$client.getDescription()</td>
+              <td>$client.getAge()</td>
+              <td>$client.getGender()</td>
+              <td><a href="/stylists/$client.getStylistId()">$client.getStylistName()</a></td>
+              <td>
+                <div class="inlinebox">
+                  <a href="/stylists/$client.getStylistId()/clients/$client.getId()/edit" class="edit-btn btn btn-primary btn-xs">Edit</a>
+                </div>
+                <div class="inlinebox">
+                  <form action="/stylists/$client.getStylistId()/clients/$client.getId()/delete" method="post">
+                    <button type="submit" class="delete-btn btn btn-danger btn-xs">Delete</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
           #end
         #else
-        <tr>
-          <td>No clients added.</td>
-          <td>N/A</td>
-          <td>N/A</td>
-          <td>N/A</td>
-          <td>N/A</td>
-          <td>N/A</td>
-        </tr>
+          <tr>
+            <td>No clients added.</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tr>
         #end
       </table>
     </div>

@@ -26,7 +26,19 @@
           </div>
           <div class="form-group">
             <label for="gender">Edit Gender:</label>
-            <input class="form-control" type="text" name="gender" required value="$client.getGender()">
+            #if($client.getGender().equals("Male"))
+              <label class="radio-inline"><input type="radio" name="gender" value="Male" required checked>Male</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="Other">Other</label>
+            #elseif($client.getGender().equals("Female"))
+              <label class="radio-inline"><input type="radio" name="gender" value="Male" required>Male</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="Female" checked>Female</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="Other">Other</label>
+            #else
+              <label class="radio-inline"><input type="radio" name="gender" value="Male" required>Male</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="Other" checked>Other</label>
+            #end
           </div>
         </div>
         <div class="form-group">

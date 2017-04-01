@@ -5,7 +5,7 @@
 #### By _**Andrew Malkin**_
 
 ## Description
-_Hair Salon tracks clients and the stylist they use. It does all this using psql databases with Spakr and Velocity for the interface._
+_Hair Salon tracks clients and the stylist they use. It does all this using psql databases with Spark and Velocity for the interface._
 
 
 ## Setup/Installation Requirements

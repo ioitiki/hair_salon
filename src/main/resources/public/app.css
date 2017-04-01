@@ -54,6 +54,10 @@ h2 {
   font-family: 'Oswald', sans-serif;
 }
 
+h3, h4 {
+  font-family: 'Oswald', sans-serif;
+}
+
 .search-btn {
   margin: 0px;
   margin-left: 3px;
@@ -76,6 +80,12 @@ h2 {
   margin-top: 15px;
 }
 
+.panel-body {
+  padding: 7px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
 #about-img {
   height: 100%;
   width: 100%;
@@ -89,6 +99,28 @@ h2 {
   vertical-align: top;
 }
 
-#clients-well {
-  padding-top: 36px;
+#client-delete-btn {
+  display: inline-block;
 }
+
+/*.custom-inlinebox {
+  margin-right: 30px;
+  margin-top: -18px;
+}*/
+
+/*.stylist-inlinebox {
+  margin-right: 30px;
+}*/
+
+/*#clients-well {
+  padding-top: 36px;
+}*/
+
+.client-info {
+  margin-left: 15px;
+  margin-top: -13px;
+}
+
+/*.client-stylist {
+  margin-top: 6px;
+}*/

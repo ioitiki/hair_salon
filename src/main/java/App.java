@@ -66,7 +66,12 @@ public class App {
       String gender = request.queryParams("gender");
       Client newClient = new Client(name, id, description, age, gender);
       newClient.save();
-      String url = "/stylists/" + id;
+      String url = "";
+      if(!(gender == null)) {
+        url = "/stylists/" + id;
+      } else {
+        url = "/stylists/" + id + "/clients/" + newClient.getId() + "/edit";
+      }
       response.redirect(url);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
