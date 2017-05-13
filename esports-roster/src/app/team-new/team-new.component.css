@@ -1,0 +1,15 @@
+.input-field .prefix {
+  top: 10px;
+  left: 20px;
+}
+
+.card {
+  width: 90vw;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.close-player {
+  cursor: pointer;
+}
